@@ -44,8 +44,8 @@ trap 'kill ${!}; usr_handler' SIGUSR1
 trap 'kill ${!}; term_handler' SIGTERM
 
 echo "Starting redsocks..."
-/usr/sbin/redsocks -c /tmp/redsocks.conf &
-/usr/sbin/pdnsd --tcp -mto -d
+redsocks -c /tmp/redsocks.conf &
+pdnsd --tcp -mto -d
 pid="$!"
 
 # wait indefinetely
