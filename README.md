@@ -1,16 +1,14 @@
 # Redsocks Docker image
 
-[![Image size](https://img.shields.io/imagelayers/image-size/myts2/redsocks-docker/latest.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
+[![Image size](https://img.shields.io/docker/image-size/myts2/redsocks-docker/latest.svg?label=docker%20image%20size)](https://hub.docker.com/r/myts2/redsocks-docker/)
 [![Docker pulls](https://img.shields.io/docker/pulls/myts2/redsocks-docker.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
 
 ## Difference with ncarlier/redsocks
 1. Apply with socks5 proxy
 2. Add anti-dns-poisoning server(pdnsd)
 3. Set `DOCKER_NET` to `""` variable and you can apply global proxy by
-```
-docker run --privileged=true --net=host -d myts2/redsocks 1.2.3.4 3128
-``` 
-without -e DOCKER_NET
+```docker run --privileged=true --net=host -d myts2/redsocks 1.2.3.4 3128``` without -e DOCKER_NET
+4. Smaller and smaller!
 
 ## Description
 
