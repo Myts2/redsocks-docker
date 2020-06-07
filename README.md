@@ -3,6 +3,15 @@
 [![Image size](https://img.shields.io/imagelayers/image-size/ncarlier/redsocks/latest.svg)](https://hub.docker.com/r/ncarlier/redsocks/)
 [![Docker pulls](https://img.shields.io/docker/pulls/ncarlier/redsocks.svg)](https://hub.docker.com/r/ncarlier/redsocks/)
 
+## Difference with ncarlier/redsocks
+1. Apply with socks5 proxy
+2. Add anti-dns-poisoning server(pdnsd)
+3. Set `DOCKER_NET` to `""` variable and you can apply global proxy by
+```
+docker run --privileged=true --net=host -d myts2/redsocks 1.2.3.4 3128
+``` 
+without -e DOCKER_NET
+
 ## Description
 
 This docker image allows you to use docker on a host without being bored by your corporate proxy.
