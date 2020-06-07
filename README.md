@@ -1,7 +1,7 @@
 # Redsocks Docker image
 
-[![Image size](https://img.shields.io/imagelayers/image-size/ncarlier/redsocks/latest.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
-[![Docker pulls](https://img.shields.io/docker/pulls/ncarlier/redsocks.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
+[![Image size](https://img.shields.io/imagelayers/image-size/myts2/redsocks-docker/latest.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
+[![Docker pulls](https://img.shields.io/docker/pulls/myts2/redsocks-docker.svg)](https://hub.docker.com/r/myts2/redsocks-docker/)
 
 ## Difference with ncarlier/redsocks
 1. Apply with socks5 proxy
