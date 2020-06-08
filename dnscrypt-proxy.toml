@@ -1,0 +1,13 @@
+server_names = ['ea-dns.rubyfish.cn', 'uw-dns.rubyfish.cn']
+listen_addresses = ['127.0.0.1:5553']
+doh_servers = true
+
+fallback_resolvers = ['114.114.114.114:53']
+ignore_system_dns = true
+
+[static]
+  [static.'ea-dns.rubyfish.cn']
+  stamp = 'sdns://AgUAAAAAAAAAAAASZWEtZG5zLnJ1YnlmaXNoLmNuCi9kbnMtcXVlcnk'
+  [static.'uw-dns.rubyfish.cn']
+  stamp = 'sdns://AgUAAAAAAAAAAAASdXctZG5zLnJ1YnlmaXNoLmNuCi9kbnMtcXVlcnk'
+

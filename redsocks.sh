@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if test $# -eq 2
 then
@@ -44,8 +44,10 @@ trap 'kill ${!}; usr_handler' SIGUSR1
 trap 'kill ${!}; term_handler' SIGTERM
 
 echo "Starting redsocks..."
-redsocks -c /tmp/redsocks.conf &
-pdnsd --tcp -mto -d
+/usr/local/bin/redsocks -c /tmp/redsocks.conf &
+sleep 1s
+/usr/local/bin/dnscrypt-proxy -config /config/dnscrypt-proxy.toml &
+#/usr/local/bin/pdnsd --tcp -mto &
 pid="$!"
 
 # wait indefinetely
