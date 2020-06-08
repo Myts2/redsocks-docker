@@ -8,7 +8,7 @@
 2. Add anti-dns-poisoning server(pdnsd)
 3. Set `DOCKER_NET` to `""` variable and you can apply global proxy without -e DOCKER_NET by
 ```
-docker run --privileged=true --net=host -d myts2/redsocks 1.2.3.4 3128
+docker run --privileged=true --net=host -d myts2/redsocks-docker 1.2.3.4 3128
 ``` 
 4. Smaller and smaller!
 
