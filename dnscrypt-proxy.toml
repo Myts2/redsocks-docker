@@ -1,4 +1,4 @@
-server_names = ['ea-dns.rubyfish.cn', 'uw-dns.rubyfish.cn']
+server_names = ['cloudflare']
 listen_addresses = ['127.0.0.1:5533']
 doh_servers = true
 fallback_resolvers = ['114.114.114.114:53']
@@ -10,9 +10,5 @@ cache_max_ttl = 86400
 cache_neg_max_ttl = 600
 
 [static]
-  [static.'ea-dns.rubyfish.cn']
-  stamp = 'sdns://AgUAAAAAAAAADzExNS4xNTkuMTMxLjIzMAASZWEtZG5zLnJ1YnlmaXNoLmNuCi9kbnMtcXVlcnk'
-  [static.'uw-dns.rubyfish.cn']
-  stamp = 'sdns://AgUAAAAAAAAADzExNS4xNTkuMTMxLjIzMAASdXctZG5zLnJ1YnlmaXNoLmNuCi9kbnMtcXVlcnk'
   [static.'cloudflare']
   stamp = 'sdns://AgcAAAAAAAAABzEuMC4wLjEAEmRucy5jbG91ZGZsYXJlLmNvbQovZG5zLXF1ZXJ5'
