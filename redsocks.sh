@@ -1,19 +1,38 @@
 #!/bin/sh
 
-if test $# -eq 2
-then
+if [ $# -eq 2 ]; then
     proxy_ip=$1
     proxy_port=$2
+    sed_script="
+        s|\${proxy_ip}|${proxy_ip}|;
+        s|\${proxy_port}|${proxy_port}|;
+    "
+elif [ $# -eq 4 ]; then
+    proxy_ip=$1
+    proxy_port=$2
+    proxy_username=$3
+    proxy_password=$4
+    sed_script="
+        s|\${proxy_ip}|${proxy_ip}|;
+        s|\${proxy_port}|${proxy_port}|;
+        s|\${proxy_username}|${proxy_username}|;
+        s|\${proxy_password}|${proxy_password}|;
+	s|//login|login|;
+	s|//password|password|;
+    "
 else
     echo "No proxy URL defined. Using default."
     proxy_ip=10.26.141.135
     proxy_port=3128
+    sed_script="
+        s|\${proxy_ip}|${proxy_ip}|;
+        s|\${proxy_port}|${proxy_port}|;
+    "
 fi
 
 echo "Creating redsocks configuration file using proxy ${proxy_ip}:${proxy_port}..."
-sed -e "s|\${proxy_ip}|${proxy_ip}|" \
-    -e "s|\${proxy_port}|${proxy_port}|" \
-    /etc/redsocks.tmpl > /tmp/redsocks.conf
+
+sed -e "$sed_script" /etc/redsocks.tmpl > /tmp/redsocks.conf
 
 echo "Generated configuration:"
 cat /tmp/redsocks.conf
