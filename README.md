@@ -8,7 +8,7 @@
 2. Add anti-dns-poisoning server(pdnsd)
 3. Set `DOCKER_NET` to `""` variable and you can apply global proxy without -e DOCKER_NET by
 ```
-docker run --privileged=true --net=host -d christianmerges/redsocks-docker 1.2.3.4 3128
+docker run --privileged=true --net=host -d christianmerges/redsocks-docker 1.2.3.4 3128 user passwd
 ``` 
 4. Smaller and smaller!
 
@@ -23,7 +23,7 @@ You have just to run this container and all your other containers will be able t
 Start the container like this:
 
 ```
-docker run --privileged=true --net=host -d christianmerges/redsocks 1.2.3.4 3128
+docker run --privileged=true --net=host -d christianmerges/redsocks 1.2.3.4 3128 user passwd
 ```
 
 Replace the IP and the port by those of your proxy.
@@ -38,7 +38,7 @@ Once edited you can replace this file into the container by mounting it:
 ```
 docker run --privileged=true --net=host \
   -v whitelist.txt:/etc/redsocks-whitelist.txt \
-  -d christianmerges/redsocks 1.2.3.4 3128
+  -d christianmerges/redsocks 1.2.3.4 3128 user passwd
 ```
 
 Use docker stop to halt the container. The iptables rules should be reversed. If not, you can execute this command:
